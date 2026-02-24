@@ -1,0 +1,120 @@
+:root {
+  --bg: #ffffff;
+  --text: #1d1d1f;
+  --muted: #626264;
+  --line: #ececf1;
+  --max: 1040px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+}
+
+.container {
+  width: min(var(--max), calc(100vw - 48px));
+  margin: 0 auto;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  gap: 24px;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 14px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.nav-list a:hover {
+  color: var(--text);
+}
+
+.page-content,
+.work-content {
+  padding: 42px 0 72px;
+}
+
+h1, h2, h3 {
+  line-height: 1.28;
+  margin-top: 1.4em;
+  margin-bottom: 0.45em;
+}
+
+h1 {
+  font-size: 34px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  margin: 0.7em 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+pre {
+  background: #f8f8f8;
+  padding: 14px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: Menlo, Monaco, monospace;
+  font-size: 13px;
+}
+
+.work-category {
+  margin: 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  font-weight: 600;
+}
