@@ -7,3 +7,5 @@ permalink: /works/music/work-1/
 # Music Work 1
 
 Add details for this work.
+
+![](../../assets/img/test-2.png)
