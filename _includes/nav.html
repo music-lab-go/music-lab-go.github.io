@@ -1,0 +1,37 @@
+{% assign music_works = site.pages | where: "layout", "work" | where: "category", "music" | sort: "title" %}
+{% assign art_works = site.pages | where: "layout", "work" | where: "category", "art" | sort: "title" %}
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav>
+      <ul class="nav-list">
+        {% for item in site.data.nav %}
+          {% assign has_dropdown = false %}
+          {% if item.url == '/works/music/' and music_works.size > 0 %}
+            {% assign has_dropdown = true %}
+          {% endif %}
+          {% if item.url == '/works/art/' and art_works.size > 0 %}
+            {% assign has_dropdown = true %}
+          {% endif %}
+          <li class="{% if has_dropdown %}has-dropdown{% endif %}">
+            <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% if item.url == '/works/music/' and music_works.size > 0 %}
+              <ul class="submenu">
+                {% for work in music_works %}
+                  <li><a href="{{ work.url | relative_url }}">{{ work.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if item.url == '/works/art/' and art_works.size > 0 %}
+              <ul class="submenu">
+                {% for work in art_works %}
+                  <li><a href="{{ work.url | relative_url }}">{{ work.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
